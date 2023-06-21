@@ -1,7 +1,7 @@
 'use client';
 import Image from 'next/image';
 import { useRouter } from 'next/navigation';
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import SearchManufacturer from './SearchManufacturer';
 
 const SearchButton = ({ otherClasses }: { otherClasses: string }) => (
@@ -24,6 +24,7 @@ const SearchBar = () => {
   const router = useRouter();
   const handleSearch = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+
     if (manufacturer === '' || model === '') {
       return alert('Please fill in all fields');
     }
